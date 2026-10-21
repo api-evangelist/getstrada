@@ -1,0 +1,6 @@
+generated: '2026-10-20'
+method: none
+# No MCP server discovered; derived candidate with no endpoint.
+deployment:
+  mode: none
+  verified: derived

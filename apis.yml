@@ -1,23 +1,88 @@
 aid: getstrada
+
 name: Strada
-description: 'Strada is a company surfaced via the API Evangelist harvest backlog (source: g2-catalog)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://www.getstrada.com/assets/meta/meta-86e8c87b.png
+
+description: Strada provides AI‑powered phone, email, and chat automation for insurance carriers, brokers, TPAs and MGAs. Their platform automates
+  claims processing, servicing, billing, and policy administration across existing carrier systems without requiring APIs. Strada’s agents handle
+  end‑to‑end insurance operations, integrating with legacy portals to increase efficiency and reduce manual work. The company serves major insurers
+  and offers a browser‑automation layer that enables insurers to modernize workflows while preserving their current technology stack.
+
 url: https://raw.githubusercontent.com/api-evangelist/getstrada/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:g2-catalog
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-20 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-20'
+
 modified: '2026-10-20'
+
 tags:
 - Company
-apis: []
+- AI
+- Insurance
+- Automation
+- Platform
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/getstrada-hosts.yml
+- type: Vendors
+  url: vendors/getstrada-vendors.yml
+- type: Security
+  url: https://www.getstrada.com/security
+- type: GitHubOrganization
+  url: https://github.com/getstrada
+- type: DomainSecurity
+  url: security/getstrada-domain-security.yml
 - type: Website
-  url: https://getstrada.com/
+  url: https://www.getstrada.com/
+- type: Documentation
+  url: https://www.getstrada.com/platform
+- type: Blog
+  url: https://www.getstrada.com/blog
+- type: About
+  url: https://www.getstrada.com/about
+- type: Careers
+  url: https://www.getstrada.com/careers
+- type: TermsOfService
+  url: https://www.getstrada.com/legal/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.getstrada.com/legal/privacy-policy
+
+apis:
+- name: Strada Platform API
+  description: Automate servicing, claims and sales operations with enterprise‑grade agentic AI built for insurance carriers.
+  humanURL: https://www.getstrada.com/platform
+  baseURL: null
+  aid: getstrada:strada-platform-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Home and platform pages are JavaScript‑rendered single‑page apps with no static OpenAPI spec.
+  evidence:
+  - url: https://www.getstrada.com/
+    status: 200
+  - url: https://www.getstrada.com/platform
+    status: 200
+  checked: '2026-10-20'
+x-enrichment:
+  date: '2026-10-20'
+  status: enriched
+  artifacts_added: 8
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
